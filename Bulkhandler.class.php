@@ -190,7 +190,7 @@ class Bulkhandler implements \BMO {
 			break;
 		}
 		
-		if($_REQUEST["type"] == "extensions" && $this->freepbx->Modules->checkStatus("sysadmin")){
+		if(isset($_REQUEST["type"]) && $_REQUEST["type"] == "extensions" && $this->freepbx->Modules->checkStatus("sysadmin")){
 			$l = \FreePBX::Sysadmin()->get_sysadmin_extensions_limit();
 
 			foreach($rawData as $ext){
